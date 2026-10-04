@@ -739,14 +739,132 @@
             gap: 16px;
         }
 
-        /* Mobile Hamburger */
+        /* Mobile Hamburger & Drawer */
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
+            color: var(--color-primary-dark);
+            cursor: pointer;
+            padding: 6px;
+        }
+
+        .mobile-drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-drawer-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: 300px;
+            height: 100vh;
+            background: #FFFDF9;
+            z-index: 2001;
+            box-shadow: -6px 0 25px rgba(0, 0, 0, 0.15);
+            transition: right 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: flex;
+            flex-direction: column;
+            padding: 24px 20px;
+            box-sizing: border-box;
+        }
+
+        .mobile-drawer.active {
+            right: 0;
+        }
+
+        .mobile-drawer-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--color-sage-border);
+            margin-bottom: 20px;
+        }
+
+        .mobile-close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
             color: var(--color-charcoal);
             cursor: pointer;
+            padding: 4px 8px;
+        }
+
+        .mobile-nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1;
+            overflow-y: auto;
+            margin: 0;
+            padding: 0;
+        }
+
+        .mobile-nav-list a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--color-charcoal);
+            font-weight: 600;
+            font-size: 0.96rem;
+            padding: 10px 14px;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .mobile-nav-list a.active,
+        .mobile-nav-list a:hover {
+            background: var(--color-sage);
+            color: var(--color-primary);
+        }
+
+        .mobile-drawer-footer {
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid var(--color-sage-border);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .mobile-contact-pill {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px;
+            border-radius: 25px;
+            font-size: 0.86rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: var(--color-sage);
+            color: var(--color-primary-dark);
+            border: 1px solid var(--color-sage-border);
+        }
+
+        .mobile-contact-pill.whatsapp {
+            background: #25D366;
+            color: #FFFFFF;
+            border: none;
         }
 
         @keyframes fadeIn {
@@ -770,8 +888,11 @@
 
         @media (max-width: 640px) {
             .footer-grid { grid-template-columns: 1fr; }
-            .logo-brand img { height: 68px; }
-            .announcement-bar { font-size: 0.74rem; padding: 7px 12px; }
+            .logo-brand img { height: 64px; }
+            .announcement-bar { font-size: 0.72rem; padding: 6px 12px; }
+            .header-container { padding: 4px 14px; }
+            .header-actions { gap: 8px; }
+            .search-pill { display: none; }
         }
     </style>
     @yield('styles')
@@ -822,12 +943,36 @@
                     <span class="cart-badge" id="cart-item-count">0</span>
                 </a>
 
-                <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle menu">
+                <button class="mobile-menu-btn" id="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
         </div>
     </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer-overlay" id="mobile-overlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="mobile-drawer-header">
+            <img src="{{ asset('assets/images/logo_transparent.png') }}" alt="Leaf N Dawn" style="height: 60px;">
+            <button class="mobile-close-btn" onclick="toggleMobileMenu()" aria-label="Close menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="{{ route('products.index') }}" class="{{ request()->routeIs('products.*') ? 'active' : '' }}"><i class="fa-solid fa-leaf"></i> Our Blends</a></li>
+            <li><a href="{{ route('products.index', ['category' => 'slimming-detox']) }}"><i class="fa-solid fa-spa"></i> Detox & Slimming</a></li>
+            <li><a href="{{ route('products.index', ['category' => 'wellness-health']) }}"><i class="fa-solid fa-heart-pulse"></i> Sugar Care</a></li>
+            <li><a href="{{ route('products.index', ['category' => 'classic-spiced-teas']) }}"><i class="fa-solid fa-mug-hot"></i> Masala Chai</a></li>
+            <li><a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}"><i class="fa-solid fa-seedling"></i> Our Story</a></li>
+            <li><a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'active' : '' }}"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="mobile-drawer-footer">
+            <a href="tel:+919211050888" class="mobile-contact-pill"><i class="fa-solid fa-phone"></i> +91 92110 50888</a>
+            <a href="https://wa.me/919211050888" target="_blank" class="mobile-contact-pill whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+        </div>
+    </div>
 
     <!-- Flash Notifications -->
     <div class="toast-container">
@@ -981,6 +1126,17 @@
                 console.error(err);
                 window.location.href = "{{ route('cart.index') }}";
             });
+        }
+
+        // Mobile Drawer Toggle Handler
+        function toggleMobileMenu() {
+            const drawer = document.getElementById('mobile-drawer');
+            const overlay = document.getElementById('mobile-overlay');
+            if (drawer && overlay) {
+                drawer.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = drawer.classList.contains('active') ? 'hidden' : '';
+            }
         }
     </script>
     @yield('scripts')
