@@ -1,215 +1,293 @@
 @extends('layouts.app')
 
-@section('title', 'Get in Touch — Leaf N Dawn')
+@section('title', 'Tea Concierge & Customer Care — Leaf N Dawn')
+@section('meta_description', 'Contact the Leaf N Dawn tea concierge for botanical blend advice, bulk corporate gifting, brewing inquiries, and express order assistance.')
 
 @section('styles')
 <style>
-    .contact-wrap {
-        max-width: 1200px;
-        margin: 50px auto 100px;
-        padding: 0 24px;
-    }
-
-    .contact-header {
+    /* Contact Hero Banner */
+    .contact-hero-banner {
+        background: linear-gradient(135deg, #122414 0%, #1E3A20 100%);
+        color: #FAF8F3;
+        padding: 60px 24px;
         text-align: center;
-        margin-bottom: 50px;
+        border-bottom: 3px solid var(--color-gold);
     }
 
-    .contact-header h1 {
+    .contact-hero-inner {
+        max-width: 820px;
+        margin: 0 auto;
+    }
+
+    .contact-hero-tag {
+        font-family: var(--font-accent);
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--color-gold-light);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+
+    .contact-hero-title {
         font-family: var(--font-heading);
         font-size: 2.8rem;
-        color: var(--color-primary-dark);
+        font-weight: 700;
+        color: #FFFFFF;
         margin-bottom: 12px;
+    }
+
+    .contact-hero-desc {
+        color: #CBD7CE;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .contact-container {
+        max-width: 1360px;
+        margin: 60px auto 90px;
+        padding: 0 24px;
     }
 
     .contact-grid {
         display: grid;
-        grid-template-columns: 1fr 1.3fr;
-        gap: 48px;
+        grid-template-columns: 1fr 1.25fr;
+        gap: 50px;
     }
 
-    .contact-card {
+    /* Left Concierge Card */
+    .concierge-card {
         background: #FFFFFF;
         border: 1px solid var(--color-sage-border);
-        border-radius: var(--radius-md);
-        padding: 36px;
-        box-shadow: var(--shadow-sm);
+        border-radius: var(--radius-lg);
+        padding: 40px 34px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.03);
     }
 
-    .contact-info-item {
+    .concierge-card h3 {
+        font-family: var(--font-heading);
+        color: var(--color-primary-dark);
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 12px;
+    }
+
+    .concierge-card h3::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 38px;
+        height: 2px;
+        background: var(--color-gold);
+    }
+
+    .concierge-item {
         display: flex;
         gap: 16px;
         align-items: flex-start;
         margin-bottom: 28px;
     }
 
-    .contact-info-item .icon-circle {
+    .concierge-icon {
         width: 48px;
         height: 48px;
         border-radius: 50%;
-        background: var(--color-sage);
-        color: var(--color-primary);
+        background: var(--color-cream);
+        border: 1.5px solid var(--color-gold);
+        color: var(--color-primary-dark);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         flex-shrink: 0;
     }
 
-    .contact-info-item h4 {
+    .concierge-item h4 {
         font-family: var(--font-heading);
-        font-size: 1.15rem;
+        font-size: 1.1rem;
         color: var(--color-primary-dark);
-        margin-bottom: 4px;
+        margin-bottom: 2px;
     }
 
-    .contact-info-item p,
-    .contact-info-item a {
-        color: #475569;
-        font-size: 0.95rem;
+    .concierge-item p,
+    .concierge-item a {
+        color: #4A5568;
+        font-size: 0.92rem;
         text-decoration: none;
     }
 
-    .contact-info-item a:hover {
-        color: var(--color-primary);
+    .concierge-item a:hover {
+        color: var(--color-gold-dark);
     }
 
-    .btn-whatsapp-chat {
-        display: inline-flex;
+    .btn-whatsapp-concierge {
+        display: flex;
         align-items: center;
+        justify-content: center;
         gap: 10px;
         background: #25D366;
         color: #FFFFFF;
-        padding: 12px 24px;
-        border-radius: 30px;
+        padding: 13px 28px;
+        border-radius: var(--radius-pill);
+        font-family: var(--font-accent);
         font-weight: 700;
-        font-size: 0.92rem;
+        font-size: 0.90rem;
         text-decoration: none;
         box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
-        margin-top: 14px;
+        margin-top: 24px;
         transition: var(--transition);
     }
 
-    .btn-whatsapp-chat:hover {
+    .btn-whatsapp-concierge:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
     }
 
-    .form-input-field {
-        margin-bottom: 18px;
+    /* Right Form Card */
+    .inquiry-form-card {
+        background: var(--color-cream);
+        border: 1px solid var(--color-sage-border);
+        border-radius: var(--radius-lg);
+        padding: 40px 34px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.03);
     }
 
-    .form-input-field label {
+    .inquiry-form-card h3 {
+        font-family: var(--font-heading);
+        color: var(--color-primary-dark);
+        font-size: 1.6rem;
+        margin-bottom: 24px;
+    }
+
+    .form-group-field {
+        margin-bottom: 20px;
+    }
+
+    .form-group-field label {
         display: block;
-        font-size: 0.86rem;
-        font-weight: 600;
-        color: #334155;
+        font-family: var(--font-accent);
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--color-primary-dark);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
         margin-bottom: 6px;
     }
 
-    .form-input-field input,
-    .form-input-field textarea {
+    .form-group-field input,
+    .form-group-field textarea,
+    .form-group-field select {
         width: 100%;
-        padding: 12px 16px;
-        border: 1.5px solid var(--color-sage-border);
+        background: #FFFFFF;
+        border: 1px solid var(--color-sage-border);
         border-radius: 8px;
+        padding: 12px 16px;
         font-size: 0.92rem;
+        font-family: var(--font-body);
         outline: none;
-        font-family: inherit;
         transition: border 0.2s;
     }
 
-    .form-input-field input:focus,
-    .form-input-field textarea:focus {
-        border-color: var(--color-primary);
+    .form-group-field input:focus,
+    .form-group-field textarea:focus,
+    .form-group-field select:focus {
+        border-color: var(--color-gold);
     }
 
-    @media (max-width: 868px) {
+    @media (max-width: 992px) {
         .contact-grid { grid-template-columns: 1fr; }
+        .contact-hero-title { font-size: 2.2rem; }
     }
 </style>
 @endsection
 
 @section('content')
-<div class="contact-wrap">
-    <div class="contact-header">
-        <span style="font-family: var(--font-accent); font-size: 0.78rem; font-weight: 700; color: var(--color-primary); letter-spacing: 1.6px; text-transform: uppercase;">Connect With Us</span>
-        <h1>We are Here to Listen</h1>
-        <p style="color: #64748B; max-width: 540px; margin: 0 auto;">Have questions regarding brewing rituals, bulk gifting or herb specifications? Our wellness specialists are always available.</p>
+
+<!-- Contact Hero Banner -->
+<div class="contact-hero-banner">
+    <div class="contact-hero-inner">
+        <span class="contact-hero-tag">✦ LEAF N DAWN CONCIERGE ✦</span>
+        <h1 class="contact-hero-title">
+            Tea Concierge & Customer Care
+        </h1>
+        <p class="contact-hero-desc">
+            Whether you seek tailored Ayurvedic blend guidance, bulk curated corporate gifting, or assistance with your tea basket, our master tea specialists are dedicated to your service.
+        </p>
     </div>
+</div>
 
+<div class="contact-container">
     <div class="contact-grid">
-        <!-- Contact Information -->
-        <div class="contact-card">
-            <h3 style="font-family: var(--font-heading); color: var(--color-primary-dark); font-size: 1.5rem; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid #F1F5F9;">
-                Direct Channels
-            </h3>
+        <!-- Direct Concierge Channels -->
+        <div class="concierge-card">
+            <h3>Direct Concierge Channels</h3>
 
-            <div class="contact-info-item">
-                <div class="icon-circle"><i class="fa-solid fa-phone"></i></div>
+            <div class="concierge-item">
+                <div class="concierge-icon"><i class="fa-solid fa-phone"></i></div>
                 <div>
-                    <h4>Phone & Customer Care</h4>
+                    <h4>Direct Voice Concierge</h4>
                     <p><a href="tel:+919211050888">+91 92110 50888</a></p>
-                    <small style="color: #94A3B8;">Mon - Sat, 9:00 AM - 7:00 PM IST</small>
+                    <small style="color: #94A3B8;">Monday through Saturday, 9:00 AM – 7:00 PM IST</small>
                 </div>
             </div>
 
-            <div class="contact-info-item">
-                <div class="icon-circle"><i class="fa-solid fa-envelope"></i></div>
+            <div class="concierge-item">
+                <div class="concierge-icon"><i class="fa-solid fa-envelope"></i></div>
                 <div>
-                    <h4>Email Inquiries</h4>
+                    <h4>Client Inquiries & Care</h4>
                     <p><a href="mailto:leafndawncare@gmail.com">leafndawncare@gmail.com</a></p>
-                    <small style="color: #94A3B8;">We respond within 24 business hours</small>
+                    <small style="color: #94A3B8;">Guaranteed reply within 24 business hours</small>
                 </div>
             </div>
 
-            <div class="contact-info-item">
-                <div class="icon-circle"><i class="fa-brands fa-instagram"></i></div>
+            <div class="concierge-item">
+                <div class="concierge-icon"><i class="fa-solid fa-gift"></i></div>
                 <div>
-                    <h4>Instagram Community</h4>
-                    <p><a href="https://instagram.com/leafndawn" target="_blank">@leafndawn</a></p>
-                    <small style="color: #94A3B8;">Join daily wellness & brewing reels</small>
+                    <h4>Custom & Corporate Gifting</h4>
+                    <p>Curated wooden tea chests, personalized gift boxes & festive wellness hampers.</p>
                 </div>
             </div>
 
-            <a href="https://wa.me/919211050888?text=Hello%20Leaf%20N%20Dawn,%20I%20have%20an%20inquiry%20regarding%20your%20herbal%20teas." target="_blank" class="btn-whatsapp-chat">
-                <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Chat Directly on WhatsApp
+            <a href="https://wa.me/919211050888?text=Hello%20Leaf%20N%20Dawn%20Concierge,%20I%20would%20like%20to%20inquire%20about%20your%20herbal%20teas." target="_blank" class="btn-whatsapp-concierge">
+                <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> Direct WhatsApp Concierge
             </a>
         </div>
 
-        <!-- Contact Form -->
-        <div class="contact-card">
-            <h3 style="font-family: var(--font-heading); color: var(--color-primary-dark); font-size: 1.5rem; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid #F1F5F9;">
-                Send Us a Note
-            </h3>
+        <!-- Inquiry Form -->
+        <div class="inquiry-form-card">
+            <h3>Send a Message to Our Tea Master</h3>
 
             <form action="{{ route('contact.send') }}" method="POST">
                 @csrf
-                <div class="form-input-field">
-                    <label for="contact_name">Your Name *</label>
-                    <input type="text" id="contact_name" name="name" required placeholder="e.g. Mayur">
+                <div class="form-group-field">
+                    <label for="contact_name">Full Name *</label>
+                    <input type="text" id="contact_name" name="name" required placeholder="e.g. Mayur Patel">
                 </div>
 
-                <div class="form-input-field">
+                <div class="form-group-field">
                     <label for="contact_email">Email Address *</label>
                     <input type="email" id="contact_email" name="email" required placeholder="e.g. mayur@example.com">
                 </div>
 
-                <div class="form-input-field">
-                    <label for="contact_phone">Phone Number (Optional)</label>
+                <div class="form-group-field">
+                    <label for="contact_phone">Contact Phone (Optional)</label>
                     <input type="tel" id="contact_phone" name="phone" placeholder="+91 92110 50888">
                 </div>
 
-                <div class="form-input-field">
-                    <label for="contact_message">How Can We Assist Your Wellness? *</label>
-                    <textarea id="contact_message" name="message" rows="4" required placeholder="Write your message here..."></textarea>
+                <div class="form-group-field">
+                    <label for="contact_message">Your Wellness Inquiry or Gifting Request *</label>
+                    <textarea id="contact_message" name="message" rows="4" required placeholder="Tell us how we can assist your tea ritual..."></textarea>
                 </div>
 
-                <button type="submit" class="btn-shop-now" style="width: 100%; justify-content: center; padding: 13px;">
-                    <i class="fa-solid fa-paper-plane"></i> Send Wellness Inquiry
+                <button type="submit" class="btn-gold" style="width: 100%; justify-content: center; padding: 14px;">
+                    <span>Submit Inquiry</span> <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </form>
         </div>
     </div>
 </div>
+
 @endsection
