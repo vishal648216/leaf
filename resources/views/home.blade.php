@@ -5,522 +5,389 @@
 
 @section('styles')
 <style>
-    /* Twinings-Style Hero Campaign Section */
-    .hero-campaign {
-        position: relative;
-        background: linear-gradient(135deg, #FAF8F3 0%, #F5F1E8 50%, #EBF2E8 100%);
-        padding: 60px 24px 80px;
-        overflow: hidden;
+    /* Twinings India Exact Split Hero Banner */
+    .twinings-hero-section {
+        background: #FAF8F3;
         border-bottom: 1px solid var(--color-sage-border);
+        overflow: hidden;
     }
 
-    .hero-container {
-        max-width: 1360px;
+    .twinings-hero-container {
+        max-width: 1440px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
+        grid-template-columns: 1fr 1.15fr;
+        min-height: 540px;
         align-items: center;
-        gap: 40px;
     }
 
-    .hero-badge-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: #FFFFFF;
-        border: 1px solid var(--color-gold);
-        padding: 6px 16px;
-        border-radius: var(--radius-pill);
+    .hero-text-pane {
+        padding: 60px 48px 60px 36px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-tag-accent {
         font-family: var(--font-accent);
         font-size: 0.76rem;
         font-weight: 700;
-        color: var(--color-gold-dark);
-        letter-spacing: 1.5px;
+        letter-spacing: 2px;
+        color: #3B5838;
         text-transform: uppercase;
-        margin-bottom: 20px;
-        box-shadow: var(--shadow-sm);
-    }
-
-    .hero-title {
-        font-family: var(--font-heading);
-        font-size: 3.8rem;
-        font-weight: 700;
-        color: var(--color-primary-dark);
-        line-height: 1.1;
-        letter-spacing: -0.5px;
-        margin-bottom: 20px;
-    }
-
-    .hero-title span {
-        color: var(--color-gold-dark);
-        font-style: italic;
-        font-weight: 400;
-    }
-
-    .hero-subtitle {
-        font-size: 1.12rem;
-        color: var(--color-slate);
-        line-height: 1.7;
-        margin-bottom: 34px;
-        max-width: 540px;
-    }
-
-    .hero-cta-group {
-        display: flex;
-        gap: 16px;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-bottom: 36px;
-    }
-
-    .hero-trust-bar {
-        display: flex;
-        gap: 24px;
-        flex-wrap: wrap;
-        padding-top: 24px;
-        border-top: 1px solid rgba(30, 58, 32, 0.12);
-        color: var(--color-primary-dark);
-        font-family: var(--font-accent);
-        font-size: 0.82rem;
-        font-weight: 600;
-        letter-spacing: 0.3px;
-    }
-
-    .hero-trust-bar span {
-        display: flex;
+        margin-bottom: 14px;
+        display: inline-flex;
         align-items: center;
         gap: 8px;
     }
 
-    .hero-trust-bar i {
-        color: var(--color-gold);
-        font-size: 0.95rem;
-    }
-
-    .hero-visual {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .hero-pouch-frame {
-        position: relative;
-        max-width: 500px;
-        width: 100%;
-        animation: floatHero 6s ease-in-out infinite;
-    }
-
-    @keyframes floatHero {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-10px) rotate(0.5deg); }
-    }
-
-    .hero-pouch-frame img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: var(--radius-lg);
-        box-shadow: 0 24px 50px rgba(30, 58, 32, 0.15);
-    }
-
-    /* Floating Crest Badge */
-    .hero-crest-badge {
-        position: absolute;
-        top: 20px;
-        right: -15px;
-        background: #FFFFFF;
-        border: 2px solid var(--color-gold);
-        border-radius: 50%;
-        width: 90px;
-        height: 90px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        box-shadow: var(--shadow-md);
-        padding: 6px;
-        z-index: 2;
-    }
-
-    .hero-crest-badge .crest-num {
-        font-family: var(--font-heading);
-        font-size: 1.4rem;
+    .hero-main-headline {
+        font-family: var(--font-accent), sans-serif;
+        font-size: 2.8rem;
         font-weight: 800;
-        color: var(--color-gold-dark);
-        line-height: 1;
-    }
-
-    .hero-crest-badge .crest-txt {
-        font-family: var(--font-accent);
-        font-size: 0.58rem;
-        font-weight: 700;
-        color: var(--color-primary-dark);
+        color: #3B5838;
+        line-height: 1.15;
+        letter-spacing: -0.5px;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
+        margin-bottom: 14px;
     }
 
-    /* 2. "Explore Our Finest Blends" Pastel Pill Collection Carousel */
-    .collections-section {
-        padding: 80px 24px 60px;
+    .hero-main-headline span {
+        color: var(--color-gold-dark);
+    }
+
+    .hero-sub-text {
+        font-size: 1.05rem;
+        color: #555555;
+        line-height: 1.6;
+        margin-bottom: 28px;
+        max-width: 480px;
+    }
+
+    .btn-twinings-hero {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: transparent;
+        color: #000000;
+        border: 1.5px solid #000000;
+        padding: 12px 32px;
+        border-radius: 4px;
+        font-family: var(--font-accent);
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        text-decoration: none;
+        width: fit-content;
+        transition: var(--transition);
+        margin-bottom: 30px;
+    }
+
+    .btn-twinings-hero:hover {
+        background: #3B5838;
+        border-color: #3B5838;
+        color: #FFFFFF;
+        transform: translateY(-2px);
+    }
+
+    .hero-badges-row {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding-top: 20px;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        font-family: var(--font-accent);
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: #3B5838;
+    }
+
+    .hero-badges-row span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .hero-image-pane {
+        position: relative;
+        height: 100%;
+        min-height: 480px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #FAF8F3;
+        padding: 24px;
+    }
+
+    .hero-composite-grid {
+        position: relative;
+        width: 100%;
+        max-width: 620px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-main-pouch {
+        width: 100%;
+        max-height: 460px;
+        object-fit: contain;
+        border-radius: 16px;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+        animation: floatPouch 6s ease-in-out infinite;
+    }
+
+    @keyframes floatPouch {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+    }
+
+    /* 2. "Explore Our Finest Tea Blends!" (Twinings 5 Pastel Pill Category Section) */
+    .explore-blends-section {
+        background: #FAF8F3;
+        padding: 70px 24px 80px;
+    }
+
+    .section-twinings-header {
+        text-align: center;
+        max-width: 780px;
+        margin: 0 auto 50px;
+    }
+
+    .section-twinings-title {
+        font-family: var(--font-accent), sans-serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #3B5838;
+        margin-bottom: 12px;
+        letter-spacing: -0.3px;
+    }
+
+    .section-twinings-desc {
+        color: #555555;
+        font-size: 0.98rem;
+        line-height: 1.6;
+    }
+
+    .pastel-pills-carousel {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
         max-width: 1360px;
         margin: 0 auto;
     }
 
-    .pastel-cards-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 28px;
-    }
-
-    .pastel-card {
-        border-radius: var(--radius-lg);
-        padding: 32px 28px;
-        position: relative;
-        overflow: hidden;
+    .pastel-pill-container {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        min-height: 320px;
+        align-items: center;
         text-decoration: none;
-        transition: transform 0.35s ease, box-shadow 0.35s ease;
-        border: 1px solid rgba(0, 0, 0, 0.04);
+        transition: transform 0.3s ease;
     }
 
-    .pastel-card:hover {
+    .pastel-pill-container:hover {
         transform: translateY(-8px);
-        box-shadow: var(--shadow-lg);
     }
 
-    .card-pastel-sage {
-        background: linear-gradient(145deg, #EEF5EC 0%, #DFECDC 100%);
-        border-left: 5px solid #367841;
-    }
-
-    .card-pastel-terracotta {
-        background: linear-gradient(145deg, #FAF0EE 0%, #F5E2DE 100%);
-        border-left: 5px solid #AC5043;
-    }
-
-    .card-pastel-ochre {
-        background: linear-gradient(145deg, #FAF4E6 0%, #F5EACC 100%);
-        border-left: 5px solid #C89B3C;
-    }
-
-    .pastel-card-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    .pastel-category-tag {
-        font-family: var(--font-accent);
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 1.2px;
-        text-transform: uppercase;
-        color: var(--color-primary-dark);
-        background: rgba(255, 255, 255, 0.7);
-        padding: 4px 12px;
-        border-radius: 20px;
-        display: inline-block;
-        margin-bottom: 12px;
-    }
-
-    .pastel-card-title {
-        font-family: var(--font-heading);
-        font-size: 2rem;
-        font-weight: 800;
-        color: var(--color-primary-dark);
-        line-height: 1.15;
-        margin-bottom: 8px;
-    }
-
-    .pastel-card-desc {
-        font-size: 0.88rem;
-        color: #4A5568;
-        line-height: 1.5;
-        max-width: 260px;
-    }
-
-    .pastel-card-seal {
-        width: 68px;
-        height: 68px;
-        border-radius: 50%;
-        background: #FFFFFF;
-        border: 1.5px solid var(--color-gold);
+    .pill-capsule-box {
+        width: 100%;
+        height: 250px;
+        border-radius: 28px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        box-shadow: var(--shadow-sm);
+        justify-content: flex-end;
+        position: relative;
+        padding: 16px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .pastel-pill-container:hover .pill-capsule-box {
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+    }
+
+    .pill-green { background: #D7E7DD; }
+    .pill-peach { background: #F8D8D8; }
+    .pill-lavender { background: #E3EAF5; }
+    .pill-cream { background: #F8F0E2; }
+    .pill-mauve { background: #F5E3F3; }
+
+    .pill-pack-img {
+        position: absolute;
+        top: -24px;
+        width: 82%;
+        max-height: 200px;
+        object-fit: contain;
+        filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.15));
+        transition: transform 0.3s ease;
+    }
+
+    .pastel-pill-container:hover .pill-pack-img {
+        transform: scale(1.08) translateY(-4px);
+    }
+
+    .pill-label-title {
+        font-family: var(--font-accent), sans-serif;
+        font-size: 1.02rem;
+        font-weight: 700;
+        color: #000000;
+        margin-top: 16px;
         text-align: center;
-        flex-shrink: 0;
+        letter-spacing: 0.2px;
     }
 
-    .pastel-card-seal .seal-qty {
-        font-family: var(--font-heading);
-        font-size: 1.25rem;
-        font-weight: 800;
-        color: var(--color-gold-dark);
-        line-height: 1;
-    }
-
-    .pastel-card-seal .seal-lbl {
-        font-family: var(--font-accent);
-        font-size: 0.52rem;
-        font-weight: 700;
-        color: var(--color-primary-dark);
+    .pill-badge-tag {
+        font-size: 0.72rem;
+        color: #3B5838;
+        font-weight: 600;
         text-transform: uppercase;
+        margin-top: 2px;
     }
 
-    .pastel-card-bottom {
-        margin-top: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-top: 18px;
-        border-top: 1px solid rgba(0, 0, 0, 0.06);
-    }
-
-    .pastel-price-tag {
-        font-family: var(--font-body);
-        font-size: 1.6rem;
-        font-weight: 800;
-        color: var(--color-primary-dark);
-    }
-
-    .btn-pastel-explore {
+    /* 3. "The Most Loved" (Twinings Exact Bestseller Grid) */
+    .most-loved-section {
         background: #FFFFFF;
-        color: var(--color-primary-dark);
-        font-family: var(--font-accent);
-        font-size: 0.82rem;
-        font-weight: 700;
-        padding: 9px 20px;
-        border-radius: var(--radius-pill);
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        box-shadow: var(--shadow-sm);
-        transition: var(--transition);
-    }
-
-    .pastel-card:hover .btn-pastel-explore {
-        background: var(--color-primary-dark);
-        color: #FFFFFF;
-    }
-
-    /* 3. "The Most Loved" (Elevated Product Grid) */
-    .bestsellers-section {
-        background: #FFFFFF;
-        padding: 85px 24px 95px;
+        padding: 80px 24px;
         border-top: 1px solid var(--color-sage-border);
         border-bottom: 1px solid var(--color-sage-border);
     }
 
-    .bestsellers-container {
-        max-width: 1360px;
-        margin: 0 auto;
-    }
-
-    .products-grid {
+    .most-loved-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 32px;
+        max-width: 1360px;
+        margin: 0 auto 48px;
     }
 
-    .product-card {
-        background: var(--color-cream);
-        border-radius: var(--radius-lg);
-        overflow: hidden;
+    .twinings-product-card {
+        background: #FAF8F3;
         border: 1px solid var(--color-sage-border);
-        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
-        transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s ease;
+        border-radius: 12px;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .twinings-product-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+        border-color: #3B5838;
+    }
+
+    .card-photo-box {
         position: relative;
-    }
-
-    .product-card:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-lg);
-        border-color: var(--color-gold);
-    }
-
-    .card-top-tag {
-        position: absolute;
-        top: 14px;
-        left: 14px;
-        background: rgba(18, 36, 20, 0.90);
-        backdrop-filter: blur(4px);
-        color: #FFFFFF;
-        font-family: var(--font-accent);
-        font-size: 0.68rem;
-        font-weight: 700;
-        padding: 4px 12px;
-        border-radius: 20px;
-        z-index: 2;
-        letter-spacing: 0.8px;
-    }
-
-    .card-discount-tag {
-        position: absolute;
-        top: 14px;
-        right: 14px;
-        background: var(--color-gold);
-        color: #111812;
-        font-family: var(--font-accent);
-        font-size: 0.70rem;
-        font-weight: 800;
-        padding: 4px 12px;
-        border-radius: 20px;
-        z-index: 2;
-        box-shadow: 0 4px 10px rgba(200, 155, 60, 0.3);
-    }
-
-    .card-image-wrap {
         height: 310px;
         background: #FFFFFF;
-        position: relative;
-        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 16px;
+        padding: 20px;
+        overflow: hidden;
     }
 
-    .card-image-wrap img {
+    .card-photo-box img {
         max-height: 100%;
         max-width: 100%;
         object-fit: contain;
-        border-radius: 12px;
-        transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition: transform 0.4s ease;
     }
 
-    .product-card:hover .card-image-wrap img {
+    .twinings-product-card:hover .card-photo-box img {
         transform: scale(1.06);
     }
 
-    .card-body {
+    .card-content-pane {
         padding: 24px;
         display: flex;
         flex-direction: column;
         flex: 1;
     }
 
-    .card-meta-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 6px;
-    }
-
-    .card-category {
-        font-family: var(--font-accent);
-        font-size: 0.72rem;
-        color: var(--color-gold-dark);
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .card-rating {
-        font-size: 0.78rem;
-        color: var(--color-gold-dark);
-        font-weight: 700;
+    .card-stars-row {
         display: flex;
         align-items: center;
         gap: 4px;
+        color: var(--color-gold);
+        font-size: 0.85rem;
+        margin-bottom: 6px;
     }
 
-    .card-title {
-        font-family: var(--font-heading);
-        font-size: 1.35rem;
-        color: var(--color-primary-dark);
-        margin: 4px 0 6px;
+    .card-stars-row span {
+        color: #64748B;
+        font-size: 0.78rem;
+        font-weight: 600;
+        margin-left: 4px;
+    }
+
+    .card-product-heading {
+        font-family: var(--font-accent), sans-serif;
+        font-size: 1.25rem;
         font-weight: 700;
+        color: #000000;
+        margin-bottom: 6px;
         line-height: 1.3;
     }
 
-    .card-title a {
+    .card-product-heading a {
         text-decoration: none;
         color: inherit;
         transition: color 0.2s;
     }
 
-    .card-title a:hover {
-        color: var(--color-gold-dark);
+    .card-product-heading a:hover {
+        color: #3B5838;
     }
 
-    .card-tagline {
+    .card-product-desc {
         font-size: 0.86rem;
-        color: var(--color-slate);
-        margin-bottom: 14px;
-        font-style: italic;
+        color: #555555;
+        line-height: 1.5;
+        margin-bottom: 16px;
     }
 
-    .card-herbs-pills {
-        display: flex;
-        gap: 6px;
-        flex-wrap: wrap;
-        margin-bottom: 18px;
-    }
-
-    .herb-pill {
-        background: #FFFFFF;
-        border: 1px solid var(--color-sage-border);
-        color: var(--color-primary-dark);
-        font-size: 0.72rem;
-        font-weight: 600;
-        padding: 3px 8px;
-        border-radius: 6px;
-    }
-
-    .card-price-row {
+    .card-price-container {
         display: flex;
         align-items: baseline;
         gap: 10px;
         margin-top: auto;
-        padding-top: 16px;
+        padding-top: 14px;
         border-top: 1px solid #EAE6DD;
         margin-bottom: 18px;
     }
 
-    .price-current {
-        font-size: 1.5rem;
+    .price-value-main {
+        font-size: 1.4rem;
         font-weight: 800;
-        color: var(--color-primary-dark);
+        color: #000000;
     }
 
-    .price-mrp {
-        font-size: 0.92rem;
+    .price-mrp-strike {
+        font-size: 0.90rem;
         color: #94A3B8;
         text-decoration: line-through;
     }
 
-    .price-per-cup {
-        margin-left: auto;
-        font-size: 0.76rem;
-        color: #64748B;
-        font-weight: 500;
-    }
-
-    .card-actions {
+    .card-button-row {
         display: grid;
-        grid-template-columns: 1fr 1.3fr;
+        grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
 
-    .btn-card-cart {
+    .btn-twinings-add {
         background: #FFFFFF;
-        border: 1.5px solid var(--color-primary);
-        color: var(--color-primary);
+        border: 1.5px solid #000000;
+        color: #000000;
         padding: 10px;
-        border-radius: var(--radius-pill);
+        border-radius: 4px;
         font-family: var(--font-accent);
-        font-size: 0.84rem;
+        font-size: 0.82rem;
         font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -529,143 +396,68 @@
         transition: var(--transition);
     }
 
-    .btn-card-cart:hover {
-        background: var(--color-primary);
+    .btn-twinings-add:hover {
+        background: #000000;
         color: #FFFFFF;
     }
 
-    .btn-card-buy {
-        background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
-        border: none;
-        color: #111812;
+    .btn-twinings-buy {
+        background: #3B5838;
+        border: 1.5px solid #3B5838;
+        color: #FFFFFF;
         padding: 10px;
-        border-radius: var(--radius-pill);
+        border-radius: 4px;
         font-family: var(--font-accent);
-        font-size: 0.84rem;
+        font-size: 0.82rem;
         font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
         text-decoration: none;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 6px;
         transition: var(--transition);
-        box-shadow: 0 4px 12px rgba(200, 155, 60, 0.25);
     }
 
-    .btn-card-buy:hover {
-        box-shadow: 0 6px 16px rgba(200, 155, 60, 0.4);
-        transform: translateY(-1px);
+    .btn-twinings-buy:hover {
+        background: #1E3A20;
+        border-color: #1E3A20;
     }
 
-    /* 4. Master Blender / Heritage Story Section (Stephen Twining Style) */
-    .master-blender-section {
-        background: linear-gradient(135deg, #122414 0%, #1E3A20 100%);
-        color: #FAF8F3;
-        padding: 90px 24px;
-        position: relative;
-        overflow: hidden;
+    .browse-all-btn-wrap {
+        text-align: center;
     }
 
-    .master-blender-container {
-        max-width: 1360px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 0.95fr 1.05fr;
+    .btn-twinings-browse-all {
+        display: inline-flex;
         align-items: center;
-        gap: 50px;
-    }
-
-    .blender-image-box {
-        position: relative;
-        border-radius: var(--radius-lg);
-        overflow: hidden;
-        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
-        border: 2px solid rgba(200, 155, 60, 0.35);
-    }
-
-    .blender-image-box img {
-        width: 100%;
-        height: auto;
-        display: block;
-        transition: transform 0.6s ease;
-    }
-
-    .blender-image-box:hover img {
-        transform: scale(1.03);
-    }
-
-    .blender-text-content {
-        padding: 20px 0;
-    }
-
-    .blender-quote {
-        font-family: var(--font-heading);
-        font-size: 2.2rem;
-        line-height: 1.3;
-        color: #FFFFFF;
-        margin-bottom: 20px;
-        letter-spacing: -0.2px;
-    }
-
-    .blender-quote span {
-        color: var(--color-gold-light);
-        font-style: italic;
-    }
-
-    .blender-desc {
-        color: #CBD7CE;
-        font-size: 1rem;
-        line-height: 1.7;
-        margin-bottom: 28px;
-    }
-
-    .blender-features-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        margin-bottom: 34px;
-    }
-
-    .blender-feature-item {
-        display: flex;
-        gap: 12px;
-        align-items: flex-start;
-    }
-
-    .feature-icon-circle {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background: rgba(200, 155, 60, 0.2);
-        border: 1px solid var(--color-gold);
-        color: var(--color-gold-light);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        font-size: 0.95rem;
-    }
-
-    .feature-text-block h5 {
-        font-family: var(--font-heading);
-        font-size: 1rem;
-        color: #FFFFFF;
-        margin-bottom: 3px;
-    }
-
-    .feature-text-block p {
+        gap: 10px;
+        background: transparent;
+        color: #000000;
+        border: 1.5px solid #000000;
+        padding: 12px 36px;
+        font-family: var(--font-accent);
         font-size: 0.82rem;
-        color: #9EAEA0;
-        line-height: 1.4;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        text-decoration: none;
+        transition: var(--transition);
     }
 
-    /* 5. Interactive Tea Rituals & Brewing Guide Infographic */
-    .brewing-rituals-section {
-        padding: 85px 24px;
+    .btn-twinings-browse-all:hover {
+        background: #000000;
+        color: #FFFFFF;
+    }
+
+    /* 4. Brand Master Blender & Stories Carousel ("Watch, Choose & Buy Now!") */
+    .watch-choose-section {
         background: #FAF8F3;
+        padding: 80px 24px;
     }
 
-    .brewing-cards-grid {
+    .video-cards-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 24px;
@@ -673,510 +465,391 @@
         margin: 0 auto;
     }
 
-    .brewing-step-card {
+    .video-portrait-card {
         background: #FFFFFF;
+        border-radius: 16px;
+        overflow: hidden;
         border: 1px solid var(--color-sage-border);
-        border-radius: var(--radius-md);
-        padding: 30px 22px;
-        text-align: center;
-        box-shadow: var(--shadow-sm);
-        transition: var(--transition);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        display: flex;
+        flex-direction: column;
         position: relative;
-    }
-
-    .brewing-step-card:hover {
-        transform: translateY(-6px);
-        box-shadow: var(--shadow-md);
-        border-color: var(--color-gold);
-    }
-
-    .step-number-badge {
-        position: absolute;
-        top: 16px;
-        left: 16px;
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
-        background: var(--color-cream);
-        color: var(--color-gold-dark);
-        font-family: var(--font-accent);
-        font-size: 0.72rem;
-        font-weight: 800;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid var(--color-sage-border);
-    }
-
-    .brewing-icon {
-        width: 68px;
-        height: 68px;
-        border-radius: 50%;
-        background: var(--color-sage);
-        color: var(--color-primary);
-        font-size: 1.8rem;
-        margin: 10px auto 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: var(--transition);
-    }
-
-    .brewing-step-card:hover .brewing-icon {
-        background: var(--color-primary);
-        color: #FFFFFF;
-        transform: rotate(10deg);
-    }
-
-    .brewing-step-card h4 {
-        font-family: var(--font-heading);
-        font-size: 1.15rem;
-        color: var(--color-primary-dark);
-        margin-bottom: 6px;
-    }
-
-    .brewing-step-card p {
-        font-size: 0.84rem;
-        color: var(--color-slate);
-        line-height: 1.5;
-    }
-
-    /* 6. FAQ Accordion Section */
-    .faq-section {
-        background: #FFFFFF;
-        padding: 85px 24px;
-        border-top: 1px solid var(--color-sage-border);
-    }
-
-    .faq-container {
-        max-width: 860px;
-        margin: 0 auto;
-    }
-
-    .faq-item {
-        border-bottom: 1px solid var(--color-sage-border);
-        padding: 20px 0;
-    }
-
-    .faq-question {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-        font-family: var(--font-heading);
-        font-size: 1.2rem;
-        color: var(--color-primary-dark);
-        font-weight: 700;
-    }
-
-    .faq-question i {
-        color: var(--color-gold-dark);
-        font-size: 0.95rem;
+        text-decoration: none;
         transition: transform 0.3s ease;
     }
 
-    .faq-item.active .faq-question i {
-        transform: rotate(180deg);
+    .video-portrait-card:hover {
+        transform: translateY(-6px);
     }
 
-    .faq-answer {
-        max-height: 0;
+    .video-thumb-frame {
+        position: relative;
+        height: 280px;
+        background: #1E3A20;
         overflow: hidden;
-        transition: max-height 0.35s ease;
-        color: var(--color-slate);
-        font-size: 0.94rem;
-        line-height: 1.7;
     }
 
-    .faq-item.active .faq-answer {
-        max-height: 250px;
-        margin-top: 12px;
+    .video-thumb-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
-    /* Responsive Queries */
+    .video-play-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.90);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #3B5838;
+        font-size: 1.2rem;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    .video-card-body {
+        padding: 20px;
+    }
+
+    .video-card-title {
+        font-family: var(--font-accent);
+        font-size: 1rem;
+        font-weight: 700;
+        color: #000000;
+        margin-bottom: 6px;
+    }
+
+    .video-card-subtitle {
+        font-size: 0.82rem;
+        color: #64748B;
+    }
+
+    /* 5. The Exclusive Gifting Collection */
+    .gifting-section {
+        background: #FFFFFF;
+        padding: 80px 24px;
+        border-top: 1px solid var(--color-sage-border);
+    }
+
+    .gifting-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        max-width: 1360px;
+        margin: 0 auto;
+    }
+
+    .gifting-card {
+        background: #FAF8F3;
+        border: 1px solid var(--color-sage-border);
+        border-radius: 16px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.3s ease;
+    }
+
+    .gifting-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
+    }
+
+    .gifting-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
+        margin-bottom: 20px;
+    }
+
+    .gifting-card h3 {
+        font-family: var(--font-accent);
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #000000;
+        margin-bottom: 8px;
+    }
+
+    .gifting-card p {
+        font-size: 0.88rem;
+        color: #555555;
+        line-height: 1.5;
+        margin-bottom: 16px;
+    }
+
+    .gifting-link-cta {
+        margin-top: auto;
+        font-family: var(--font-accent);
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #3B5838;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+        .pastel-pills-carousel { grid-template-columns: repeat(3, 1fr); }
+        .video-cards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
     @media (max-width: 992px) {
-        .hero-container { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-        .hero-subtitle { margin: 0 auto 28px; }
-        .hero-cta-group { justify-content: center; }
-        .hero-trust-bar { justify-content: center; }
-        .hero-title { font-size: 2.9rem; }
-        .pastel-cards-grid { grid-template-columns: 1fr; }
-        .products-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
-        .master-blender-container { grid-template-columns: 1fr; }
-        .brewing-cards-grid { grid-template-columns: 1fr 1fr; }
+        .twinings-hero-container { grid-template-columns: 1fr; }
+        .hero-text-pane { padding: 40px 20px; text-align: center; }
+        .hero-sub-text { margin: 0 auto 24px; }
+        .btn-twinings-hero { margin: 0 auto 24px; }
+        .hero-badges-row { justify-content: center; }
+        .pastel-pills-carousel { grid-template-columns: repeat(2, 1fr); }
+        .most-loved-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto 40px; }
+        .gifting-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px) {
-        .hero-campaign { padding: 40px 16px 50px; }
-        .hero-title { font-size: 2.2rem; }
-        .hero-subtitle { font-size: 0.96rem; margin-bottom: 24px; }
-        .hero-cta-group { flex-direction: column; width: 100%; gap: 12px; }
-        .btn-gold, .btn-outline-heritage { width: 100%; justify-content: center; }
-        .brewing-cards-grid { grid-template-columns: 1fr; }
-        .blender-quote { font-size: 1.7rem; }
-        .blender-features-grid { grid-template-columns: 1fr; }
+        .hero-main-headline { font-size: 2rem; }
+        .pastel-pills-carousel { grid-template-columns: 1fr; }
+        .video-cards-grid { grid-template-columns: 1fr; }
     }
 </style>
 @endsection
 
 @section('content')
 
-    <!-- 1. Hero Campaign Section (Twinings India Luxury Heritage) -->
-    <section class="hero-campaign" id="hero-campaign">
-        <div class="hero-container">
-            <div class="hero-text-content">
-                <div class="hero-badge-pill">
-                    <span>✦</span> Sourced with Care • Himalayan Estate Botanicals
-                </div>
-                <h1 class="hero-title">
-                    Crafted for Your <span>Elevated</span> Tea Ritual
+    <!-- 1. Twinings India Exact Split Hero Banner -->
+    <section class="twinings-hero-section" id="hero-banner">
+        <div class="twinings-hero-container">
+            <div class="hero-text-pane">
+                <span class="hero-tag-accent">✦ Sourced with Care ✦</span>
+                <h1 class="hero-main-headline">
+                    THE GREEN GOODNESS, <span>EVERYDAY.</span>
                 </h1>
-                <p class="hero-subtitle">
-                    Immerse yourself in pure whole-leaf botanical infusions formulated with 5,000-year-old Ayurvedic wisdom. Unfurl vitality, digestion, and tranquility in every cup.
+                <p class="hero-sub-text">
+                    A refreshing antioxidant & Ayurvedic vitality boost formulated with pure whole-leaf botanicals harvested from pristine mountain gardens.
                 </p>
-                <div class="hero-cta-group">
-                    <a href="{{ route('products.index') }}" class="btn-gold" id="btn-hero-explore-blends">
-                        <span>Explore Our Blends</span> <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a href="{{ route('about') }}" class="btn-outline-heritage" id="btn-hero-our-story">
-                        <span>Our Heritage Story</span>
-                    </a>
-                </div>
-                <div class="hero-trust-bar">
-                    <span><i class="fa-solid fa-seedling"></i> 100% Ayurvedic Formula</span>
-                    <span><i class="fa-solid fa-award"></i> ISO 22000 & HACCP</span>
-                    <span><i class="fa-solid fa-truck-fast"></i> Free Express Shipping > ₹499</span>
-                </div>
-            </div>
-
-            <div class="hero-visual">
-                <div class="hero-pouch-frame">
-                    <img src="{{ asset('assets/images/hero_pouch.jpg') }}" alt="Leaf N Dawn Luxury Herbal Teas Collection">
-                </div>
-                <div class="hero-crest-badge">
-                    <span class="crest-num">100%</span>
-                    <span class="crest-txt">Pure<br>Botanicals</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 2. "Explore Our Finest Tea Blends!" Pastel Pill Collection Cards -->
-    <section class="collections-section" id="collections-pills">
-        <div class="section-header">
-            <span class="section-tag">Curated Collections</span>
-            <h2 class="section-title">Explore Our Finest Tea Blends</h2>
-            <p class="section-desc">From metabolic slimming teas to pure spiced Assam haveli chai, discover the purposeful blend crafted specifically for your wellness rhythm.</p>
-        </div>
-
-        <div class="pastel-cards-grid">
-            <!-- Card 1: Aureva Sage -->
-            <a href="{{ route('products.show', 'aureva-slimming-detox') }}" class="pastel-card card-pastel-sage">
-                <div class="pastel-card-top">
-                    <div>
-                        <span class="pastel-category-tag">Slimming & Detox</span>
-                        <h3 class="pastel-card-title">AUREVA</h3>
-                        <p class="pastel-card-desc">Oolong, Moringa, Peppermint & Lemongrass for natural metabolism cleansing.</p>
-                    </div>
-                    <div class="pastel-card-seal">
-                        <span class="seal-qty">17</span>
-                        <span class="seal-lbl">Herbs</span>
-                    </div>
-                </div>
-                <div class="pastel-card-bottom">
-                    <span class="pastel-price-tag">₹549</span>
-                    <span class="btn-pastel-explore">
-                        Shop Blend <i class="fa-solid fa-arrow-right"></i>
-                    </span>
-                </div>
-            </a>
-
-            <!-- Card 2: Sugara Terracotta -->
-            <a href="{{ route('products.show', 'sugara-blood-sugar-care') }}" class="pastel-card card-pastel-terracotta">
-                <div class="pastel-card-top">
-                    <div>
-                        <span class="pastel-category-tag">Glycemic Wellness</span>
-                        <h3 class="pastel-card-title">SUGARA</h3>
-                        <p class="pastel-card-desc">Karela, Jamun, Gudmar & Cinnamon to support balanced glucose vitality.</p>
-                    </div>
-                    <div class="pastel-card-seal">
-                        <span class="seal-qty">14</span>
-                        <span class="seal-lbl">Herbs</span>
-                    </div>
-                </div>
-                <div class="pastel-card-bottom">
-                    <span class="pastel-price-tag">₹599</span>
-                    <span class="btn-pastel-explore">
-                        Shop Blend <i class="fa-solid fa-arrow-right"></i>
-                    </span>
-                </div>
-            </a>
-
-            <!-- Card 3: Masala Chai Ochre -->
-            <a href="{{ route('products.show', 'masala-chai-spice-blend') }}" class="pastel-card card-pastel-ochre">
-                <div class="pastel-card-top">
-                    <div>
-                        <span class="pastel-category-tag">Royal Spice Reserve</span>
-                        <h3 class="pastel-card-title">MASALA CHAI</h3>
-                        <p class="pastel-card-desc">Assam CTC infused with Malabar Cardamom, Ginger, Clove & Cinnamon.</p>
-                    </div>
-                    <div class="pastel-card-seal">
-                        <span class="seal-qty">5</span>
-                        <span class="seal-lbl">Spices</span>
-                    </div>
-                </div>
-                <div class="pastel-card-bottom">
-                    <span class="pastel-price-tag">₹399</span>
-                    <span class="btn-pastel-explore">
-                        Shop Blend <i class="fa-solid fa-arrow-right"></i>
-                    </span>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <!-- 3. "The Most Loved" (Elevated Product Grid with Quick Add) -->
-    <section class="bestsellers-section" id="the-most-loved">
-        <div class="bestsellers-container">
-            <div class="section-header">
-                <span class="section-tag">The Most Loved</span>
-                <h2 class="section-title">Signature Formulations</h2>
-                <p class="section-desc">Each pyramid tea bag allows whole botanicals and crushed aromatic spices to gently unfurl and infuse active phyto-nutrients into your water.</p>
-            </div>
-
-            <div class="products-grid">
-                @foreach($featuredProducts as $prod)
-                    <div class="product-card" id="card-product-{{ $prod->id }}">
-                        <span class="card-top-tag">
-                            @if($prod->herb_count)
-                                {{ $prod->herb_count }} WHOLE HERBS
-                            @else
-                                ESTATE BLEND
-                            @endif
-                        </span>
-                        @if($prod->discount_percent > 0)
-                            <span class="card-discount-tag">{{ $prod->discount_percent }}% OFF</span>
-                        @endif
-
-                        <a href="{{ route('products.show', $prod->slug) }}" class="card-image-wrap">
-                            <img src="{{ asset($prod->main_image ?: 'assets/images/mockup_product.jpg') }}" alt="{{ $prod->name }}">
-                        </a>
-
-                        <div class="card-body">
-                            <div class="card-meta-row">
-                                <span class="card-category">{{ $prod->category ? $prod->category->name : 'Herbal Tea' }}</span>
-                                <span class="card-rating">
-                                    <i class="fa-solid fa-star"></i> {{ number_format($prod->avg_rating, 1) }} ({{ $prod->review_count ?? 120 }}+)
-                                </span>
-                            </div>
-
-                            <h3 class="card-title">
-                                <a href="{{ route('products.show', $prod->slug) }}">{{ $prod->name }}</a>
-                            </h3>
-                            <p class="card-tagline">"{{ $prod->tagline }}"</p>
-
-                            <div class="card-herbs-pills">
-                                @if($prod->slug === 'aureva-slimming-detox')
-                                    <span class="herb-pill">🌿 Oolong & Green Tea</span>
-                                    <span class="herb-pill">🍃 Peppermint</span>
-                                    <span class="herb-pill">🌱 Moringa & Tulsi</span>
-                                @elseif($prod->slug === 'sugara-blood-sugar-care')
-                                    <span class="herb-pill">🌿 Karela & Gudmar</span>
-                                    <span class="herb-pill">🍃 Jamun Seed</span>
-                                    <span class="herb-pill">🌱 Ceylon Cinnamon</span>
-                                @else
-                                    <span class="herb-pill">☕ Assam CTC Tea</span>
-                                    <span class="herb-pill">🌿 Malabar Cardamom</span>
-                                    <span class="herb-pill">🌱 Dried Ginger & Clove</span>
-                                @endif
-                            </div>
-
-                            <div class="card-price-row">
-                                <span class="price-current">₹{{ number_format($prod->price, 0) }}</span>
-                                @if($prod->mrp)
-                                    <span class="price-mrp">₹{{ number_format($prod->mrp, 0) }}</span>
-                                @endif
-                                <span class="price-per-cup">
-                                    @if($prod->total_bags)
-                                        ₹{{ round($prod->price / $prod->total_bags, 1) }} / cup
-                                    @endif
-                                </span>
-                            </div>
-
-                            <div class="card-actions">
-                                <button class="btn-card-cart" onclick="quickAddToCart({{ $prod->id }})" id="btn-quick-add-{{ $prod->id }}">
-                                    <i class="fa-solid fa-bag-shopping"></i> Add
-                                </button>
-                                <a href="{{ route('products.show', $prod->slug) }}" class="btn-card-buy" id="btn-buy-{{ $prod->id }}">
-                                    <span>Buy Now</span> <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. Master Ayurvedic Formulator & Heritage Story (Twinings Stephen Twining Style) -->
-    <section class="master-blender-section" id="master-blender-story">
-        <div class="master-blender-container">
-            <div class="blender-image-box">
-                <img src="{{ asset('assets/images/tea_estate_heritage.jpg') }}" onerror="this.src='{{ asset('assets/images/hero_pouch.jpg') }}'" alt="Leaf N Dawn Master Blender and Ayurvedic Formulations">
-            </div>
-
-            <div class="blender-text-content">
-                <span class="section-tag" style="color: var(--color-gold-light);">The Art of Botanical Mastery</span>
-                <h2 class="blender-quote">
-                    "We don't just blend tea — we compose <span>restorative moments</span> of pure balance."
-                </h2>
-                <p class="blender-desc">
-                    Leaf N Dawn was born from a singular passion: honoring the ancient botanical wisdom of the Himalayas while delivering a luxurious, uncompromised tea experience for modern lifestyles.
-                </p>
-
-                <div class="blender-features-grid">
-                    <div class="blender-feature-item">
-                        <div class="feature-icon-circle"><i class="fa-solid fa-mountain"></i></div>
-                        <div class="feature-text-block">
-                            <h5>High-Altitude Sourcing</h5>
-                            <p>Hand-plucked leaves harvested at first light for maximal antioxidant retention.</p>
-                        </div>
-                    </div>
-                    <div class="blender-feature-item">
-                        <div class="feature-icon-circle"><i class="fa-solid fa-flask"></i></div>
-                        <div class="feature-text-block">
-                            <h5>Ayurvedic Precision</h5>
-                            <p>Formulated in collaboration with certified herbalists and food scientists.</p>
-                        </div>
-                    </div>
-                    <div class="blender-feature-item">
-                        <div class="feature-icon-circle"><i class="fa-solid fa-recycle"></i></div>
-                        <div class="feature-text-block">
-                            <h5>Zero Plastic Pyramids</h5>
-                            <p>100% biodegradable corn-starch bags that dissolve safely into the earth.</p>
-                        </div>
-                    </div>
-                    <div class="blender-feature-item">
-                        <div class="feature-icon-circle"><i class="fa-solid fa-shield-check"></i></div>
-                        <div class="feature-text-block">
-                            <h5>Triple Quality Tested</h5>
-                            <p>ISO 22000 and HACCP certified purity with zero synthetic chemicals.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="{{ route('about') }}" class="btn-gold" id="btn-blender-read-more">
-                    <span>Discover Our Philosophy</span> <i class="fa-solid fa-arrow-right"></i>
+                <a href="{{ route('products.index') }}" class="btn-twinings-hero" id="btn-hero-shop-all">
+                    <span>Shop All Blends</span> <i class="fa-solid fa-arrow-right"></i>
                 </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- 5. Interactive Tea Rituals & Brewing Guide Infographics -->
-    <section class="brewing-rituals-section" id="brewing-rituals">
-        <div class="section-header">
-            <span class="section-tag">The Perfect Infusion</span>
-            <h2 class="section-title">The Art of Brewing Your Ritual</h2>
-            <p class="section-desc">Follow these 4 simple steps to extract the richest aromas and bioactive herbal compounds from your Leaf N Dawn pyramid bag.</p>
-        </div>
-
-        <div class="brewing-cards-grid">
-            <div class="brewing-step-card">
-                <span class="step-number-badge">01</span>
-                <div class="brewing-icon"><i class="fa-solid fa-mug-hot"></i></div>
-                <h4>Warm Your Teaware</h4>
-                <p>Rinse your favorite ceramic mug or teapot with hot water to maintain optimal brewing heat.</p>
-            </div>
-
-            <div class="brewing-step-card">
-                <span class="step-number-badge">02</span>
-                <div class="brewing-icon"><i class="fa-solid fa-temperature-three-quarters"></i></div>
-                <h4>90°C Fresh Spring Water</h4>
-                <p>Heat freshly drawn water just short of a rolling boil (approx 90°C) to protect delicate herbal oils.</p>
-            </div>
-
-            <div class="brewing-step-card">
-                <span class="step-number-badge">03</span>
-                <div class="brewing-icon"><i class="fa-solid fa-hourglass-half"></i></div>
-                <h4>3 - 5 Minutes Steep</h4>
-                <p>Place 1 pyramid tea bag and let the whole botanicals fully expand and infuse their rich golden hue.</p>
-            </div>
-
-            <div class="brewing-step-card">
-                <span class="step-number-badge">04</span>
-                <div class="brewing-icon"><i class="fa-solid fa-spa"></i></div>
-                <h4>Sip & Rejuvenate</h4>
-                <p>Inhale the crisp natural aromatics, sip slowly, and embrace mindful tranquility.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. FAQ Accordion Section (Twinings India Model) -->
-    <section class="faq-section" id="frequently-asked-questions">
-        <div class="faq-container">
-            <div class="section-header">
-                <span class="section-tag">Answers to Your Questions</span>
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-desc">Learn more about our sourcing standards, health benefits, and shelf life.</p>
-            </div>
-
-            <div class="faq-accordion">
-                <div class="faq-item active">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Are Leaf N Dawn tea bags 100% plastic-free and biodegradable?</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Yes, absolutely! Our pyramid tea bags are crafted from 100% biodegradable corn-starch mesh (PLA). They contain zero nylon, zero microplastics, and zero toxic chemical bleach, making them safe for you and the planet.
-                    </div>
+                <div class="hero-badges-row">
+                    <span><i class="fa-solid fa-seedling"></i> 100% Ayurvedic</span>
+                    <span><i class="fa-solid fa-award"></i> ISO 22000 & HACCP</span>
+                    <span><i class="fa-solid fa-truck-fast"></i> Free Shipping > ₹499</span>
                 </div>
+            </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>When is the best time to consume Aureva Detox & Sugara Tea?</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        We recommend drinking **Aureva Slimming Detox** once in the morning after waking up or 30 minutes before lunch to ignite your metabolism. For **Sugara Blood Sugar Care**, drinking a warm cup 20–30 minutes after your principal meals helps optimize post-meal glycemic balance.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>How long does delivery take across India?</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        All orders are freshly packed and dispatched within 24 hours. Metro cities typically receive deliveries within 2–3 business days, while other regions take 3–5 business days. All orders above ₹499 qualify for Free Express Shipping.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Do these teas contain added sugar or artificial flavorings?</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        No. Every single Leaf N Dawn formulation is 100% natural and contains zero refined sugars, zero artificial colors, and zero chemical preservatives. The sweetness and flavors come entirely from natural sun-dried herbs and spices.
-                    </div>
+            <div class="hero-image-pane">
+                <div class="hero-composite-grid">
+                    <img src="{{ asset('assets/images/hero_pouch.jpg') }}" alt="Leaf N Dawn Ayurvedic Herbal Teas" class="hero-main-pouch">
                 </div>
             </div>
         </div>
     </section>
 
-@endsection
+    <!-- 2. "Explore Our Finest Tea Blends!" (Twinings Exact 5 Pastel Pill Cards) -->
+    <section class="explore-blends-section" id="explore-finest-blends">
+        <div class="section-twinings-header">
+            <h2 class="section-twinings-title">Explore Our Finest Tea Blends!</h2>
+            <p class="section-twinings-desc">
+                Discover a world of taste with our expertly crafted teas. From daily vitality infusions to royal spiced haveli chai, there's a blend for every wellness mood.
+            </p>
+        </div>
 
-@section('scripts')
-<script>
-    function toggleFaq(element) {
-        const item = element.parentElement;
-        const allItems = document.querySelectorAll('.faq-item');
-        
-        allItems.forEach(i => {
-            if (i !== item) i.classList.remove('active');
-        });
-        
-        item.classList.toggle('active');
-    }
-</script>
+        <div class="pastel-pills-carousel">
+            <!-- 1. Green Teas (Mint Pastel) -->
+            <a href="{{ route('products.show', 'aureva-slimming-detox') }}" class="pastel-pill-container">
+                <div class="pill-capsule-box pill-green">
+                    <img src="{{ asset('assets/images/mockup_product.jpg') }}" alt="Green & Detox Teas" class="pill-pack-img">
+                </div>
+                <h4 class="pill-label-title">Green & Detox Teas</h4>
+                <span class="pill-badge-tag">Aureva & Oolong</span>
+            </a>
+
+            <!-- 2. Sugar Care (Peach Pastel) -->
+            <a href="{{ route('products.show', 'sugara-blood-sugar-care') }}" class="pastel-pill-container">
+                <div class="pill-capsule-box pill-peach">
+                    <img src="{{ asset('assets/images/hero_pouch.jpg') }}" alt="Sugar Care Teas" class="pill-pack-img">
+                </div>
+                <h4 class="pill-label-title">Sugar Care Teas</h4>
+                <span class="pill-badge-tag">Sugara Glycemic</span>
+            </a>
+
+            <!-- 3. Herbal Infusions (Lavender Pastel) -->
+            <a href="{{ route('products.index', ['category' => 'wellness-health']) }}" class="pastel-pill-container">
+                <div class="pill-capsule-box pill-lavender">
+                    <img src="{{ asset('assets/images/mockup_product.jpg') }}" alt="Herbal Infusions" class="pill-pack-img">
+                </div>
+                <h4 class="pill-label-title">Herbal Infusions</h4>
+                <span class="pill-badge-tag">Tulsi & Chamomile</span>
+            </a>
+
+            <!-- 4. Assam Spiced Chai (Warm Cream Pastel) -->
+            <a href="{{ route('products.show', 'masala-chai-spice-blend') }}" class="pastel-pill-container">
+                <div class="pill-capsule-box pill-cream">
+                    <img src="{{ asset('assets/images/hero_pouch.jpg') }}" alt="Royal Spiced Chai" class="pill-pack-img">
+                </div>
+                <h4 class="pill-label-title">Royal Spiced Chai</h4>
+                <span class="pill-badge-tag">Assam CTC & Cardamom</span>
+            </a>
+
+            <!-- 5. Curated Gifting (Mauve Pastel) -->
+            <a href="{{ route('products.index') }}" class="pastel-pill-container">
+                <div class="pill-capsule-box pill-mauve">
+                    <img src="{{ asset('assets/images/mockup_product.jpg') }}" alt="Curated Gifting" class="pill-pack-img">
+                </div>
+                <h4 class="pill-label-title">Curated Gifting</h4>
+                <span class="pill-badge-tag">Tea Chests & Hampers</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 3. "The Most Loved" (Twinings Exact Bestseller Cards Grid) -->
+    <section class="most-loved-section" id="the-most-loved">
+        <div class="section-twinings-header">
+            <h2 class="section-twinings-title">The Most Loved</h2>
+            <p class="section-twinings-desc">
+                Sip the blends that have captured hearts across India. Loved for their therapeutic purity, cherished for their taste.
+            </p>
+        </div>
+
+        <div class="most-loved-grid">
+            @foreach($featuredProducts as $prod)
+                <div class="twinings-product-card" id="most-loved-{{ $prod->id }}">
+                    <a href="{{ route('products.show', $prod->slug) }}" class="card-photo-box">
+                        <img src="{{ asset($prod->main_image ?: 'assets/images/mockup_product.jpg') }}" alt="{{ $prod->name }}">
+                    </a>
+
+                    <div class="card-content-pane">
+                        <div class="card-stars-row">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span>{{ number_format($prod->avg_rating, 1) }} ({{ $prod->total_reviews ?: 140 }}+)</span>
+                        </div>
+
+                        <h3 class="card-product-heading">
+                            <a href="{{ route('products.show', $prod->slug) }}">{{ $prod->name }}</a>
+                        </h3>
+                        <p class="card-product-desc">{{ $prod->short_description ?: $prod->tagline }}</p>
+
+                        <div class="card-price-container">
+                            <span class="price-value-main">₹{{ number_format($prod->price, 0) }}</span>
+                            @if($prod->mrp)
+                                <span class="price-mrp-strike">₹{{ number_format($prod->mrp, 0) }}</span>
+                            @endif
+                        </div>
+
+                        <div class="card-button-row">
+                            <button type="button" class="btn-twinings-add" onclick="quickAddToCart({{ $prod->id }})" id="btn-quick-add-{{ $prod->id }}">
+                                <i class="fa-solid fa-bag-shopping"></i> Add
+                            </button>
+                            <a href="{{ route('products.show', $prod->slug) }}" class="btn-twinings-buy" id="btn-view-{{ $prod->id }}">
+                                <span>Buy Now</span> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+        <div class="browse-all-btn-wrap">
+            <a href="{{ route('products.index') }}" class="btn-twinings-browse-all">
+                <span>Browse All Teas</span> <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 4. "Watch, Choose & Buy Now!" (Stephen Twining / Master Blender Video Cards) -->
+    <section class="watch-choose-section" id="watch-choose-buy">
+        <div class="section-twinings-header">
+            <h2 class="section-twinings-title">Watch, Choose & Experience!</h2>
+            <p class="section-twinings-desc">
+                See the blends, feel the flavours, find your perfect cup. Experience tea shopping made simple, seamless, and satisfying.
+            </p>
+        </div>
+
+        <div class="video-cards-grid">
+            <a href="{{ route('about') }}" class="video-portrait-card">
+                <div class="video-thumb-frame">
+                    <img src="{{ asset('assets/images/tea_estate_heritage.jpg') }}" alt="Art of Ayurvedic Blending">
+                    <div class="video-play-btn"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="video-card-body">
+                    <h4 class="video-card-title">The Art of Botanical Mastery</h4>
+                    <p class="video-card-subtitle">Master Blender Story • 2 Mins</p>
+                </div>
+            </a>
+
+            <a href="{{ route('products.show', 'aureva-slimming-detox') }}" class="video-portrait-card">
+                <div class="video-thumb-frame">
+                    <img src="{{ asset('assets/images/hero_pouch.jpg') }}" alt="Aureva Detox Morning Ritual">
+                    <div class="video-play-btn"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="video-card-body">
+                    <h4 class="video-card-title">Morning Detox Infusion Ritual</h4>
+                    <p class="video-card-subtitle">Aureva Herbal Cleansing • 1.5 Mins</p>
+                </div>
+            </a>
+
+            <a href="{{ route('products.show', 'sugara-blood-sugar-care') }}" class="video-portrait-card">
+                <div class="video-thumb-frame">
+                    <img src="{{ asset('assets/images/mockup_product.jpg') }}" alt="Sugara Post Meal Balance">
+                    <div class="video-play-btn"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="video-card-body">
+                    <h4 class="video-card-title">Post-Meal Glycemic Balance</h4>
+                    <p class="video-card-subtitle">Sugara Herbal Science • 2 Mins</p>
+                </div>
+            </a>
+
+            <a href="{{ route('products.show', 'masala-chai-spice-blend') }}" class="video-portrait-card">
+                <div class="video-thumb-frame">
+                    <img src="{{ asset('assets/images/hero_pouch.jpg') }}" alt="Brewing Royal Masala Chai">
+                    <div class="video-play-btn"><i class="fa-solid fa-play"></i></div>
+                </div>
+                <div class="video-card-body">
+                    <h4 class="video-card-title">Brewing Authentic Masala Chai</h4>
+                    <p class="video-card-subtitle">Malabar Cardamom & Assam CTC • 2.5 Mins</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- 5. The Exclusive Gifting Collection (Twinings Illustrated Cards) -->
+    <section class="gifting-section" id="exclusive-gifting">
+        <div class="section-twinings-header">
+            <h2 class="section-twinings-title">The Exclusive Gifting Collection</h2>
+            <p class="section-twinings-desc">
+                Elevate celebrations with handcrafted wooden tea chests, assorted samplers, and festive wellness hampers.
+            </p>
+        </div>
+
+        <div class="gifting-grid">
+            <a href="{{ route('products.index') }}" class="gifting-card">
+                <img src="{{ asset('assets/images/hero_pouch.jpg') }}" alt="The Feel Good Collection">
+                <h3>The Feel-Good Collection</h3>
+                <p>An invigorating trio of metabolic slimming, digestive, and calming herbal infusions.</p>
+                <span class="gifting-link-cta">Discover Gifting &rarr;</span>
+            </a>
+
+            <a href="{{ route('products.index') }}" class="gifting-card">
+                <img src="{{ asset('assets/images/mockup_product.jpg') }}" alt="The Explorers Collection">
+                <h3>The Ayurvedic Explorer Box</h3>
+                <p>Explore 6 single-estate botanical blends packed in biodegradable pyramid pouches.</p>
+                <span class="gifting-link-cta">Discover Gifting &rarr;</span>
+            </a>
+
+            <a href="{{ route('products.index') }}" class="gifting-card">
+                <img src="{{ asset('assets/images/hero_pouch.jpg') }}" alt="The Imperial Chai Chest">
+                <h3>The Imperial Chai Chest</h3>
+                <p>Vintage wooden tea chest containing whole Malabar spices and premium Assam leaf tea.</p>
+                <span class="gifting-link-cta">Discover Gifting &rarr;</span>
+            </a>
+        </div>
+    </section>
+
 @endsection
